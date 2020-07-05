@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>222359778817-45tc32kmnub73ea4qk3bf0iu67vbd94p.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.222359778817-45tc32kmnub73ea4qk3bf0iu67vbd94p</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAxUBewdaud36Mo0-JnzZfIIJN6KXV8ghU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>222359778817</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.inspireui.fnews</string>
+	<key>PROJECT_ID</key>
+	<string>fluxnews-abaa0</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fluxnews-abaa0.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:222359778817:ios:4a3cfcf14e102a1c37f200</string>
+	<key>DATABASE_URL</key>
+	<string>https://fluxnews-abaa0.firebaseio.com</string>
+</dict>
+</plist>
