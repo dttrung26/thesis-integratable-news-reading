@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:localstorage/localstorage.dart';
+
 import '../common/constants.dart';
 import '../models/blog_news.dart';
 
@@ -33,7 +34,7 @@ class WishListModel extends ChangeNotifier {
   }
 
   void saveWishlist(List<BlogNews> blogs) async {
-    final LocalStorage storage = new LocalStorage("fstore");
+    final LocalStorage storage = new LocalStorage("thesiscseiu");
     try {
       final ready = await storage.ready;
       if (ready) {
@@ -45,7 +46,7 @@ class WishListModel extends ChangeNotifier {
   }
 
   void getLocalWishlist() async {
-    final LocalStorage storage = new LocalStorage("fstore");
+    final LocalStorage storage = new LocalStorage("thesiscseiu");
     try {
       final ready = await storage.ready;
       if (ready) {

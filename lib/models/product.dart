@@ -40,7 +40,7 @@ class ProductModel with ChangeNotifier {
   }
 
   void saveProducts(Map<String, dynamic> data) async {
-    final LocalStorage storage = new LocalStorage("fstore");
+    final LocalStorage storage = new LocalStorage("thesiscseiu");
     try {
       final ready = await storage.ready;
       if (ready) {
@@ -138,8 +138,12 @@ class Product {
       permalink = parsedJson["permalink"];
       price = parsedJson["price"] != null ? parsedJson["price"].toString() : "";
 
-      regularPrice = parsedJson["regular_price"] != null ? parsedJson["regular_price"].toString() : "";
-      salePrice = parsedJson["sale_price"] != null ? parsedJson["sale_price"].toString() : null;
+      regularPrice = parsedJson["regular_price"] != null
+          ? parsedJson["regular_price"].toString()
+          : "";
+      salePrice = parsedJson["sale_price"] != null
+          ? parsedJson["sale_price"].toString()
+          : null;
       onSale = parsedJson["on_sale"];
       inStock = parsedJson["in_stock"];
 
@@ -170,7 +174,8 @@ class Product {
         orElse: () => null,
       );
       if (video != null) {
-        videoUrl = video['value'] is String ? video['value'] : video['value']['url'];
+        videoUrl =
+            video['value'] is String ? video['value'] : video['value']['url'];
       }
 
       // get affiliate link
@@ -331,11 +336,7 @@ class Attribute {
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      "id": id,
-      "name": name,
-      "option": option
-    };
+    return {"id": id, "name": name, "option": option};
   }
 }
 
@@ -376,10 +377,8 @@ class ProductVariation {
       "sale_price": salePrice,
       "on_sale": onSale,
       "in_stock": inStock,
-      "image": {
-        "src": imageFeature
-      },
-      "attributes": attributes.map((item){
+      "image": {"src": imageFeature},
+      "attributes": attributes.map((item) {
         return item.toJson();
       }).toList()
     };

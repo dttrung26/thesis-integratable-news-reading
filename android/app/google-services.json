@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:222359778817:android:2bf360e96b31487737f200",
         "android_client_info": {
-          "package_name": "com.inspireui.fluxnews"
+          "package_name": "com.example.thesiscseiu"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "222359778817-f5qff7f1bvig1bbl368f856jmsimbo1s.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.inspireui.fluxnews",
+            "package_name": "com.example.thesiscseiu",
             "certificate_hash": "be36457d7f98b189c1ff0b98da20d3df79d69312"
           }
         },
@@ -26,7 +26,7 @@
           "client_id": "222359778817-eg3bsog7idktq4fmp63sgn3edae98m5m.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.inspireui.fluxnews",
+            "package_name": "com.example.thesiscseiu",
             "certificate_hash": "18658317ffbb85a88e45e6d52d5490b368413bcd"
           }
         },
@@ -34,7 +34,7 @@
           "client_id": "222359778817-e9disnoj4bbaqu5jbnom56qhb8ovk8fr.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.inspireui.fluxnews",
+            "package_name": "com.example.thesiscseiu",
             "certificate_hash": "9c343c74ffe5aa67d698cb710aa5808f9b9f11f4"
           }
         },
@@ -42,7 +42,7 @@
           "client_id": "222359778817-hg1j8j2ahm8e33q2fis5hkvgppsche8e.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.inspireui.fluxnews",
+            "package_name": "com.example.thesiscseiu",
             "certificate_hash": "4f662e9517808220b9745681d7535222900bbbcd"
           }
         },
@@ -67,7 +67,7 @@
               "client_id": "222359778817-45tc32kmnub73ea4qk3bf0iu67vbd94p.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.inspireui.fluxnews"
+                "bundle_id": "com.example.thesiscseiu"
               }
             }
           ]
@@ -78,7 +78,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:222359778817:android:0515a5c3b97df54137f200",
         "android_client_info": {
-          "package_name": "com.inspireui.fnews"
+          "package_name": "com.example.thesiscseiu"
         }
       },
       "oauth_client": [
@@ -86,7 +86,7 @@
           "client_id": "222359778817-hb0rec39iuddc7jjv2i4cumdk4lua67p.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.inspireui.fnews",
+            "package_name": "com.example.thesiscseiu",
             "certificate_hash": "5b55c353ff865693d1167b0de7abe0bdd507fa94"
           }
         },
@@ -111,7 +111,7 @@
               "client_id": "222359778817-45tc32kmnub73ea4qk3bf0iu67vbd94p.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.inspireui.fluxnews"
+                "bundle_id": "com.example.thesiscseiu"
               }
             }
           ]

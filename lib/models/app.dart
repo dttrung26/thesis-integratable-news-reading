@@ -3,6 +3,7 @@ import 'dart:convert' as convert;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:thesiscseiu/common/config.dart';
 
 import '../models/category.dart';
 
@@ -11,7 +12,7 @@ class AppModel with ChangeNotifier {
   bool isLoading = true;
   String message;
   bool darkTheme = false;
-  String locale = "en";
+  String locale = kAdvanceConfig['DefaultLanguage'] ?? "en";
   String productListLayout;
   bool isAccessedByOnBoardingBoard = false;
 

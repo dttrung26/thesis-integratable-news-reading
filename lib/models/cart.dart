@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:localstorage/localstorage.dart';
 
-import 'product.dart';
-import '../models/product.dart';
-import '../models/address.dart';
-import '../models/shipping_method.dart';
-import '../models/payment_method.dart';
-import '../models/user.dart';
 import '../common/constants.dart';
+import '../models/address.dart';
+import '../models/payment_method.dart';
+import '../models/product.dart';
+import '../models/shipping_method.dart';
+import '../models/user.dart';
+import 'product.dart';
 
 class CartModel with ChangeNotifier {
-  CartModel(){
+  CartModel() {
     initData();
   }
 
@@ -29,7 +29,8 @@ class CartModel with ChangeNotifier {
 
   // The IDs and product variation of products currently in the cart.
   Map<String, ProductVariation> _productVariationInCart = {};
-  Map<String, ProductVariation> get productVariationInCart => Map.from(_productVariationInCart);
+  Map<String, ProductVariation> get productVariationInCart =>
+      Map.from(_productVariationInCart);
 
   //This is used for magento
   //The IDs and product sku of products currently in the cart.
@@ -38,32 +39,44 @@ class CartModel with ChangeNotifier {
 
   int get totalCartQuantity => _productsInCart.values.fold(0, (v, e) => v + e);
 
-  double getSubTotal(){
-    return _productsInCart.keys.fold(0.0, (sum, key){
-      if(_productVariationInCart[key] != null && _productVariationInCart[key].price != null && _productVariationInCart[key].price.isNotEmpty){
-        return sum + double.parse(_productVariationInCart[key].price) * _productsInCart[key];
-      }else{
+  double getSubTotal() {
+    return _productsInCart.keys.fold(0.0, (sum, key) {
+      if (_productVariationInCart[key] != null &&
+          _productVariationInCart[key].price != null &&
+          _productVariationInCart[key].price.isNotEmpty) {
+        return sum +
+            double.parse(_productVariationInCart[key].price) *
+                _productsInCart[key];
+      } else {
         var productId;
         if (key.contains("-")) {
           productId = int.parse(key.split("-")[0]);
         } else {
           productId = int.parse(key);
         }
-        if(_item[productId].price != null && _item[productId].price.isNotEmpty){
-          return sum +  double.parse(_item[productId].price) * _productsInCart[key];
+        if (_item[productId].price != null &&
+            _item[productId].price.isNotEmpty) {
+          return sum +
+              double.parse(_item[productId].price) * _productsInCart[key];
         }
         return sum;
       }
     });
   }
 
-  double getTotal(){
-    return getSubTotal() - getSubTotal()*amount/100;
+  double getTotal() {
+    return getSubTotal() - getSubTotal() * amount / 100;
   }
 
   // Adds a product to the cart.
-  void addProductToCart({Product product, int quantity = 1, ProductVariation variation, isSaveLocal = true}) {
-    if(isSaveLocal) saveCartToLocal(product: product,quantity: quantity,variation: variation);
+  void addProductToCart(
+      {Product product,
+      int quantity = 1,
+      ProductVariation variation,
+      isSaveLocal = true}) {
+    if (isSaveLocal)
+      saveCartToLocal(
+          product: product, quantity: quantity, variation: variation);
 
     var key = "${product.id}";
     if (variation != null) {
@@ -110,22 +123,23 @@ class CartModel with ChangeNotifier {
     notifyListeners();
   }
 
-  void setAddress(data){
+  void setAddress(data) {
     address = data;
     saveShippingAddress(data);
   }
 
-  Future getAddress()async{
-    if(address == null){
+  Future getAddress() async {
+    if (address == null) {
       await getShippingAddress();
     }
     return address;
   }
-  void setShippingMethod(data){
+
+  void setShippingMethod(data) {
     shippingMethod = data;
   }
 
-  void setPaymentMethod(data){
+  void setPaymentMethod(data) {
     paymentMethod = data;
   }
 
@@ -153,115 +167,136 @@ class CartModel with ChangeNotifier {
     notifyListeners();
   }
 
-  void initData()async{
+  void initData() async {
     getShippingAddress();
     getCartInLocal();
   }
 
-  void saveShippingAddress(Address address) async{
-    final LocalStorage storage = new LocalStorage("fstore");
-    try{
+  void saveShippingAddress(Address address) async {
+    final LocalStorage storage = new LocalStorage("thesiscseiu");
+    try {
       final ready = await storage.ready;
-      if(ready){
+      if (ready) {
         await storage.setItem(kLocalKey["shippingAddress"], address);
       }
-    }catch(err){
+    } catch (err) {
       print(err);
     }
   }
 
-  Future getShippingAddress() async{
-    final LocalStorage storage = new LocalStorage("fstore");
-    try{
+  Future getShippingAddress() async {
+    final LocalStorage storage = new LocalStorage("thesiscseiu");
+    try {
       final ready = await storage.ready;
-      if(ready){
+      if (ready) {
         final json = storage.getItem(kLocalKey["shippingAddress"]);
-        if(json != null){
+        if (json != null) {
           address = Address.fromLocalJson(json);
           return address;
-        }else{
+        } else {
           final userJson = storage.getItem(kLocalKey["userInfo"]);
-          if(userJson != null){
+          if (userJson != null) {
             final user = User.fromLocalJson(userJson);
-            address = Address(firstName: user.firstName, lastName: user.lastName, email: user.email);
+            address = Address(
+                firstName: user.firstName,
+                lastName: user.lastName,
+                email: user.email);
             return address;
           }
         }
       }
       return null;
-    }catch(err){
+    } catch (err) {
       print(err);
       return null;
     }
   }
 
-  void saveCartToLocal({Product product, int quantity = 1, ProductVariation variation}) async{
-    final LocalStorage storage = new LocalStorage("fstore");
-    try{
+  void saveCartToLocal(
+      {Product product, int quantity = 1, ProductVariation variation}) async {
+    final LocalStorage storage = new LocalStorage("thesiscseiu");
+    try {
       final ready = await storage.ready;
-      if(ready){
+      if (ready) {
         List items = await storage.getItem(kLocalKey["cart"]);
-        if(items != null && items.isNotEmpty){
-          items.add({"product": product.toJson(), "quantity": quantity, "variation": variation.toString()});
-        }else{
-          items = [{"product": product.toJson(), "quantity": quantity, "variation": variation.toString()}];
+        if (items != null && items.isNotEmpty) {
+          items.add({
+            "product": product.toJson(),
+            "quantity": quantity,
+            "variation": variation.toString()
+          });
+        } else {
+          items = [
+            {
+              "product": product.toJson(),
+              "quantity": quantity,
+              "variation": variation.toString()
+            }
+          ];
         }
         await storage.setItem(kLocalKey["cart"], items);
       }
-    }catch(err){
+    } catch (err) {
       print(err);
     }
   }
 
-  void getCartInLocal() async{
-    final LocalStorage storage = new LocalStorage("fstore");
-    try{
+  void getCartInLocal() async {
+    final LocalStorage storage = new LocalStorage("thesiscseiu");
+    try {
       final ready = await storage.ready;
-      if(ready){
+      if (ready) {
         List items = await storage.getItem(kLocalKey["cart"]);
-        if(items != null && items.isNotEmpty){
-          items.forEach((item){
-            addProductToCart(product: Product.fromLocalJson(item["product"]), quantity: item["quantity"], variation: item["variation"] != "null" ? ProductVariation.fromLocalJson(item["variation"]) : null, isSaveLocal: false);
+        if (items != null && items.isNotEmpty) {
+          items.forEach((item) {
+            addProductToCart(
+                product: Product.fromLocalJson(item["product"]),
+                quantity: item["quantity"],
+                variation: item["variation"] != "null"
+                    ? ProductVariation.fromLocalJson(item["variation"])
+                    : null,
+                isSaveLocal: false);
           });
         }
       }
-    }catch(err){
+    } catch (err) {
       print(err);
     }
   }
 
-  void clearCartLocal() async{
-    final LocalStorage storage = new LocalStorage("fstore");
-    try{
+  void clearCartLocal() async {
+    final LocalStorage storage = new LocalStorage("thesiscseiu");
+    try {
       final ready = await storage.ready;
-      if(ready){
+      if (ready) {
         storage.deleteItem(kLocalKey["cart"]);
       }
-    }catch(err){
+    } catch (err) {
       print(err);
     }
   }
 
-  void removeProductLocal(int productId) async{
-    final LocalStorage storage = new LocalStorage("fstore");
-    try{
+  void removeProductLocal(int productId) async {
+    final LocalStorage storage = new LocalStorage("thesiscseiu");
+    try {
       final ready = await storage.ready;
-      if(ready){
+      if (ready) {
         List items = await storage.getItem(kLocalKey["cart"]);
-        if(items != null && items.isNotEmpty){
-          var item = items.firstWhere((item)=>Product.fromLocalJson(item["product"]).id == productId, orElse: ()=>null);
-          if(item != null){
-            if(item["quantity"] == 1){
+        if (items != null && items.isNotEmpty) {
+          var item = items.firstWhere(
+              (item) => Product.fromLocalJson(item["product"]).id == productId,
+              orElse: () => null);
+          if (item != null) {
+            if (item["quantity"] == 1) {
               items.remove(item);
-            }else{
+            } else {
               item["quantity"]--;
             }
           }
           await storage.setItem(kLocalKey["cart"], items);
         }
-
       }
-    }catch(err){
+    } catch (err) {
       print(err);
     }
   }

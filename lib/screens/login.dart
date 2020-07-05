@@ -154,8 +154,6 @@ class _LoginPageState extends State<LoginScreen>
           username: username.trim(),
           password: password.trim(),
           success: (user) {
-            _stopAnimation();
-            _welcomeMessage(user, context);
             _auth
                 .signInWithEmailAndPassword(email: username, password: password)
                 .catchError((onError) {
@@ -168,6 +166,8 @@ class _LoginPageState extends State<LoginScreen>
                       email: username, password: password);
                 });
             });
+            _stopAnimation();
+            _welcomeMessage(user, context);
           },
           fail: (message) {
             _stopAnimation();

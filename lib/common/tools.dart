@@ -7,10 +7,10 @@ import 'package:flutter/widgets.dart';
 import 'package:html_unescape/html_unescape.dart';
 import 'package:intl/intl.dart';
 import 'package:path/path.dart' as p;
+import 'package:thesiscseiu/generated/l10n.dart';
 import 'package:timeago/timeago.dart' as timeago;
 import 'package:validate/validate.dart';
 
-import '../generated/l10n.dart';
 import 'config.dart';
 import 'constants.dart';
 

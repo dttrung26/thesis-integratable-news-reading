@@ -7,7 +7,7 @@ import '../generated/l10n.dart';
 import '../models/notification.dart';
 
 class Notifications extends StatelessWidget {
-  final LocalStorage storage = new LocalStorage('fstore');
+  final LocalStorage storage = new LocalStorage('thesiscseiu');
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class NotificationScreen extends StatefulWidget {
 }
 
 class _NotificationScreenState extends State<NotificationScreen> {
-  final LocalStorage storage = new LocalStorage('fstore');
+  final LocalStorage storage = new LocalStorage('thesiscseiu');
   var _data;
 
   @override

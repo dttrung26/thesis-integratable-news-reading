@@ -1,4 +1,4 @@
-package com.inspireui.fnews
+package com.example.thesiscseiu
 
 import android.os.Bundle
 

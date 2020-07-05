@@ -41,7 +41,7 @@ class BlogNewsModel with ChangeNotifier {
   }
 
   void saveBlogs(Map<String, dynamic> data) async {
-    final LocalStorage storage = new LocalStorage("fstore");
+    final LocalStorage storage = new LocalStorage("thesiscseiu");
     try {
       final ready = await storage.ready;
       if (ready) {
@@ -170,7 +170,8 @@ class BlogNews {
     // for caching current products list
     if (blogs != null) {
       blog.setBlogNewsList(blogs);
-      Provider.of<BlogNewsModel>(context, listen: false).categoryName = categoryName;
+      Provider.of<BlogNewsModel>(context, listen: false).categoryName =
+          categoryName;
       return Navigator.push(
           context,
           MaterialPageRoute(

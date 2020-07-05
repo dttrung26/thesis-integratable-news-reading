@@ -120,18 +120,13 @@ class MyAppState extends State<MyApp> with AfterLayoutMixin {
 
           return MultiProvider(
             providers: [
-//              Provider<ProductModel>.value(value: _product),
               Provider<BlogNewsModel>.value(value: _blog),
               Provider<WishListModel>.value(value: _wishlist),
-//              Provider<ShippingMethodModel>.value(value: _shippingMethod),
-//              Provider<PaymentMethodModel>.value(value: _paymentMethod),
-//              Provider<OrderModel>.value(value: _order),
               Provider<SearchModel>.value(value: _search),
               Provider<RecentModel>.value(
                 value: _recent,
               ),
               ChangeNotifierProvider(create: (context) => UserModel()),
-//              ChangeNotifierProvider(create: (context) => CartModel()),
               ChangeNotifierProvider(create: (context) => CategoryModel()),
             ],
             child: MaterialApp(

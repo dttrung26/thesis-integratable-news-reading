@@ -1,5 +1,6 @@
-import 'package:localstorage/localstorage.dart';
 import 'dart:convert' as convert;
+
+import 'package:localstorage/localstorage.dart';
 
 class FStoreNotification {
   String body;
@@ -51,10 +52,15 @@ class FStoreNotification {
     seen = false;
   }
 
-  Map<String, dynamic> toJson() => {'body': body, 'title': title, 'seen': seen, 'date': date,};
+  Map<String, dynamic> toJson() => {
+        'body': body,
+        'title': title,
+        'seen': seen,
+        'date': date,
+      };
 
   void updateSeen(int index) async {
-    final LocalStorage storage = new LocalStorage("fstore");
+    final LocalStorage storage = new LocalStorage("thesiscseiu");
     this.seen = true;
     try {
       final ready = await storage.ready;
@@ -72,14 +78,14 @@ class FStoreNotification {
   }
 
   void saveToLocal(String id) async {
-    final LocalStorage storage = new LocalStorage("fstore");
-    
+    final LocalStorage storage = new LocalStorage("thesiscseiu");
+
     try {
       final ready = await storage.ready;
       if (ready) {
         var list = storage.getItem('notifications');
         String old = storage.getItem('message-id').toString();
-        if(old.isNotEmpty && id != 'null') {
+        if (old.isNotEmpty && id != 'null') {
           if (old == id) return;
           await storage.setItem('message-id', id);
         } else {
