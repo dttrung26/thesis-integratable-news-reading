@@ -454,6 +454,7 @@ DEPENDENCIES:
   - connectivity (from `.symlinks/plugins/connectivity/ios`)
   - device_apps (from `.symlinks/plugins/device_apps/ios`)
   - facebook_audience_network (from `.symlinks/plugins/facebook_audience_network/ios`)
+  - Firebase/Analytics
   - firebase_admob (from `.symlinks/plugins/firebase_admob/ios`)
   - firebase_analytics (from `.symlinks/plugins/firebase_analytics/ios`)
   - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
@@ -701,6 +702,6 @@ SPEC CHECKSUMS:
   video_player_web: da8cadb8274ed4f8dbee8d7171b420dedd437ce7
   webview_flutter: db3aba222b23e4dc432e0c5882834123dc50ff9f
 
-PODFILE CHECKSUM: 1b66dae606f75376c5f2135a8290850eeb09ae83
+PODFILE CHECKSUM: e622f683ed7cb02e372cb6773c53de7c1f414de3
 
 COCOAPODS: 1.9.3

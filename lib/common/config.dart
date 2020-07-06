@@ -1,4 +1,5 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import '../common/constants.dart';
 
 /// Server config
@@ -79,6 +80,7 @@ const kAdvanceConfig = {
   "DetailedBlogLayout": kBlogLayout.oneQuarterImageType,
   "EnablePointReward": false,
   "HeartButtonType": kHeartButtonType.cornerType,
+  "DefaultPhoneISOCode": "+84"
 };
 
 /// The Google API Key to support Pick up the Address automatically

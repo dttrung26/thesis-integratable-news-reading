@@ -10,10 +10,6 @@ import '../../widgets/login_animation.dart';
 import 'verify.dart';
 
 class LoginSMS extends StatefulWidget {
-  final bool fromCart;
-
-  LoginSMS({this.fromCart = false});
-
   @override
   _LoginSMSState createState() => _LoginSMSState();
 }
@@ -99,9 +95,7 @@ class _LoginSMSState extends State<LoginSMS> with TickerProviderStateMixin {
           context,
           MaterialPageRoute(
               builder: (context) => VerifyCode(
-                  fromCart: widget.fromCart,
-                  verId: verId,
-                  phoneNumber: phoneNumber)),
+                  fromCart: false, verId: verId, phoneNumber: phoneNumber)),
         );
       };
 

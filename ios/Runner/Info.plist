@@ -28,20 +28,21 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>inspireui.com</string>
+			<string>iucse.thesis</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fluxstore</string>
-				<string>fb430258564493822</string>
+				<string>iucsethesis</string>
+				<string>fb3182025155187857</string>
+				<string>com.googleusercontent.apps.573200835528-tirert9dab6dc543u4qjoa0eib0po9rg</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>FacebookAppID</key>
-	<string>430258564493822</string>
+	<string>3182025155187857</string>
 	<key>FacebookDisplayName</key>
-	<string>FluxStore</string>
+	<string>IU CSE Thesis</string>
 	<key>FirebaseAppDelegateProxyEnabled</key>
 	<string>NO</string>
 	<key>GADApplicationIdentifier</key>
