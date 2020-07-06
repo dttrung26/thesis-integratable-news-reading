@@ -1,4 +1,4 @@
-package com.example.thesiscseiu
+package com.iucse.thesis
 
 import android.os.Bundle
 

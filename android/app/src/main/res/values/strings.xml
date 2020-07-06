@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FluxStore</string>
+    <string name="app_name">IU CSE Thesis</string>
     <string name="fb_app_id">430258564493822</string>
     <string name="ak_client_token">0314e76011ea6c0be16c334469a2e5c1</string>
     <string name="api_key">your-google-api-key</string>

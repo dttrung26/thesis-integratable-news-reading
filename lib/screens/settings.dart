@@ -11,7 +11,6 @@ import '../models/user.dart';
 import '../models/wishlist.dart';
 import '../widgets/smartchat.dart';
 import 'language.dart';
-import 'notification.dart';
 
 class SettingScreen extends StatefulWidget {
   final User user;
@@ -154,87 +153,7 @@ class SettingScreenState extends State<SettingScreen>
                           },
                         ),
                       ),
-                      Divider(
-                        color: Colors.black12,
-                        height: 1.0,
-                        indent: 75,
-                        //endIndent: 20,
-                      ),
-                      Card(
-                        margin: EdgeInsets.only(bottom: 2.0),
-                        elevation: 0,
-                        child: SwitchListTile(
-                          secondary: Image.asset(
-                            'assets/icons/profile/icon-notify.png',
-                            width: 25,
-                            color: Theme.of(context).accentColor,
-                          ),
-                          value: enabledNotification,
-                          activeColor: Theme.of(context).primaryColor,
-                          onChanged: (bool value) {
-                            if (value) {
-                              NotificationSettingsIos iosSetting =
-                                  NotificationSettingsIos(
-                                      sound: true, badge: true, alert: true);
-                              NotificationPermissions
-                                      .requestNotificationPermissions(
-                                          iosSettings: iosSetting)
-                                  .then((_) {
-                                checkNotificationPermission();
-                              });
-                            }
-                            setState(() {
-                              enabledNotification = value;
-                            });
-                          },
-                          title: Text(
-                            S.of(context).getNotification,
-                            style: TextStyle(fontSize: 16),
-                          ),
-                        ),
-                      ),
-                      Divider(
-                        color: Colors.black12,
-                        height: 1.0,
-                        indent: 75,
-                        //endIndent: 20,
-                      ),
-                      enabledNotification
-                          ? Card(
-                              margin: EdgeInsets.only(bottom: 2.0),
-                              elevation: 0,
-                              child: GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              Notifications()));
-                                },
-                                child: ListTile(
-                                  leading: Icon(
-                                    Icons.list,
-                                    size: 24,
-                                    color: Theme.of(context).accentColor,
-                                  ),
-                                  title: Text(S.of(context).listMessages),
-                                  trailing: Icon(
-                                    Icons.arrow_forward_ios,
-                                    size: 18,
-                                    color: kGrey600,
-                                  ),
-                                ),
-                              ),
-                            )
-                          : Container(),
-                      enabledNotification
-                          ? Divider(
-                              color: Colors.black12,
-                              height: 1.0,
-                              indent: 75,
-                              //endIndent: 20,
-                            )
-                          : Container(),
+
                       Divider(
                         color: Colors.black12,
                         height: 1.0,

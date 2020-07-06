@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.thesiscseiu">
+    package="com.iucse.thesis">
     
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -11,7 +11,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="FluxNews"
+        android:label="IU CSE Thesis"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
