@@ -60,6 +60,7 @@
     },
     {
       "layout" : "sliderItem",
+
       "name": "Recent Recipe",
       "category": 40
     },
@@ -77,11 +78,13 @@
     },
     {
       "name": "Sweetie Sweet Sweet",
+      "image": "",
       "layout": "fourColumn",
       "category": 31
     },
     {
       "name": "Community Sharing",
+      "image": "",
       "layout": "staggered",
       "category": 31
     }
