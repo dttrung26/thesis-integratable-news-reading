@@ -33,21 +33,19 @@ const CategoryStaticImages = {
 /// the welcome screen data
 List onBoardingData = [
   {
-    "title": "Welcome to FluxNews",
+    "title": "Welcome to IU CSE Thesis",
     "image": "assets/images/fogg-delivery-1.png",
-    "desc": "FluxNews is on the way to serve you. "
+    "desc": "This is on-boarding screen 1"
   },
   {
     "title": "Connecting Surrounding World",
     "image": "assets/images/fogg-uploading-1.png",
-    "desc":
-        "See all things happening around you just by a click in your phone. "
-            "Fast, convenient and clean."
+    "desc": "This is on-boarding screen 2"
   },
   {
     "title": "Let's Get Started",
     "image": "fogg-order-completed.png",
-    "desc": "Waiting no more, let's see what we get!"
+    "desc": "This is on-boarding screen 3"
   },
 ];
 
