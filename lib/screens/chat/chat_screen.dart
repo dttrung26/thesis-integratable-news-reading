@@ -7,10 +7,10 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:place_picker/uuid.dart';
+import 'package:thesiscseiu/models/user.dart';
 
 import '../../common/config.dart' as config;
 import '../../common/styles.dart';
-import '../../models/user.dart';
 import 'chat_typing.dart';
 import 'messages.dart';
 
@@ -40,12 +40,10 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   void initState() {
 //    getCurrentUser();
-
+    super.initState();
     Future.delayed(Duration.zero, () {
       getCurrentUser();
     });
-
-    super.initState();
   }
 
   Future getImage() async {
@@ -64,6 +62,7 @@ class _ChatScreenState extends State<ChatScreen> {
     StorageTaskSnapshot storageTaskSnapshot = await uploadTask.onComplete;
     storageTaskSnapshot.ref.getDownloadURL().then((downloadUrl) {
       imageUrl = downloadUrl;
+      print(imageUrl);
       if (widget.isAdmin) {
         _fireStore
             .collection('chatRooms')
@@ -119,7 +118,7 @@ class _ChatScreenState extends State<ChatScreen> {
         });
       }
     } catch (e) {
-//      print(e.toString());
+      print(e.toString());
     }
   }
 
@@ -261,8 +260,8 @@ class _ChatScreenState extends State<ChatScreen> {
                               'userEmail': loggedInUser.email,
                               'createdAt': DateTime.now().toIso8601String(),
                               'isSeenByAdmin': false,
-                              'adminTyping': false,
                               'userTyping': false,
+                              'adminTyping': false,
                               'image': ''
                             }, merge: true);
                           }

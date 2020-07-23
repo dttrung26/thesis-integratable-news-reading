@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "573200835528-gkpb1iof34nkgmdfhbcb2j93b466ipvs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iucse.thesis",
+            "certificate_hash": "ebb2e7100ad94fce7537621459685471a22dda38"
+          }
+        },
+        {
           "client_id": "573200835528-lgemti0kugps4iejpg1dsrmig0q93vld.apps.googleusercontent.com",
           "client_type": 3
         }

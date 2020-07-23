@@ -88,7 +88,6 @@ dependencies:
   custom_splash: 0.0.2
   google_fonts: 0.3.6
   google_sign_in: 4.1.1
-  apple_sign_in: 0.1.0
   international_phone_input: 1.0.2
   pin_code_fields: 2.3.0+3
   onesignal_flutter: ^2.0.0

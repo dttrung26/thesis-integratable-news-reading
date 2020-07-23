@@ -75,7 +75,7 @@ const kAdvanceConfig = {
   "GuestCheckout": true,
   "EnableShipping": false,
   "GridCount": 3,
-  "DetailedBlogLayout": kBlogLayout.oneQuarterImageType,
+  "DetailedBlogLayout": kBlogLayout.fullSizeImageType,
   "EnablePointReward": false,
   "HeartButtonType": kHeartButtonType.cornerType,
   "DefaultPhoneISOCode": "+84"
@@ -109,10 +109,9 @@ const smartChat = [
   },
   {'app': 'tel:8499999999', 'iconData': FontAwesomeIcons.phone},
   {'app': 'sms://8499999999', 'iconData': FontAwesomeIcons.sms},
-  {'app': 'firebase', 'iconData': FontAwesomeIcons.google},
   {'app': 'intercome', 'iconData': FontAwesomeIcons.intercom},
 ];
-const String adminEmail = "admininspireui@gmail.com";
+const String adminEmail = "tientien@gmail.com";
 
 const kIntercomAPIKey = {
   'android': 'android_sdk-2c16c0e017a1e7b8d3b73b5a13a56b54cbf535c0',

@@ -3,9 +3,9 @@ import 'package:intro_slider/intro_slider.dart';
 import 'package:intro_slider/slide_object.dart';
 import 'package:provider/provider.dart';
 
-import '../models/app.dart';
 import '../common/config.dart' as config;
 import '../common/styles.dart';
+import '../models/app.dart';
 import 'login.dart';
 import 'registration.dart';
 
@@ -41,8 +41,8 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                   style: TextStyle(color: kTeal400, fontSize: 20.0),
                 ),
                 onTap: () {
-                  Provider.of<AppModel>(context, listen: false).isAccessedByOnBoardingBoard =
-                      true;
+                  Provider.of<AppModel>(context, listen: false)
+                      .isAccessedByOnBoardingBoard = true;
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -69,8 +69,8 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                   style: TextStyle(color: kTeal400, fontSize: 20.0),
                 ),
                 onTap: () {
-                  Provider.of<AppModel>(context).isAccessedByOnBoardingBoard =
-                      true;
+                  Provider.of<AppModel>(context, listen: false)
+                      .isAccessedByOnBoardingBoard = true;
                   Navigator.push(
                     context,
                     MaterialPageRoute(

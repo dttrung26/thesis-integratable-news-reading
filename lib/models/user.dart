@@ -1,4 +1,3 @@
-import 'package:apple_sign_in/apple_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -323,13 +322,6 @@ class User {
     name = account.user.displayName;
     email = account.user.email;
     picture = account.user.photoUrl;
-  }
-
-  User.fromApple(AppleIdCredential account) {
-    id = account.user.replaceAll(".", "");
-    name = account.fullName.familyName;
-    email = account.email;
-    picture = null;
   }
 
   // from WooCommerce Json

@@ -3,12 +3,14 @@ import 'package:notification_permissions/notification_permissions.dart';
 import 'package:provider/provider.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 
+import '../common/config.dart' as config;
 import '../common/constants.dart';
 import '../common/styles.dart';
 import '../generated/l10n.dart';
 import '../models/app.dart';
 import '../models/user.dart';
 import '../models/wishlist.dart';
+import '../screens/chat/chat_list_by_admin.dart';
 import '../widgets/smartchat.dart';
 import 'language.dart';
 
@@ -63,7 +65,21 @@ class SettingScreenState extends State<SettingScreen>
 
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
-      floatingActionButton: SmartChat(user: widget.user),
+      floatingActionButton: (widget.user.username == config.adminEmail)
+          ? FloatingActionButton(
+              backgroundColor: Theme.of(context).primaryColor,
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ListChat(user: widget.user))); //
+              },
+              child: Icon(
+                Icons.chat,
+                size: 22,
+              ),
+            )
+          : SmartChat(user: widget.user),
 //      body: Text("This is Setting screen"),
       body: CustomScrollView(
         slivers: <Widget>[

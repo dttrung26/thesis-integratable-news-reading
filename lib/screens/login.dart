@@ -1,5 +1,4 @@
 import 'package:after_layout/after_layout.dart';
-import 'package:apple_sign_in/apple_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -43,12 +42,7 @@ class _LoginPageState extends State<LoginScreen>
   }
 
   @override
-  void afterFirstLayout(BuildContext context) async {
-    try {
-      isAvailableApple = await AppleSignIn.isAvailable();
-      setState(() {});
-    } catch (e) {}
-  }
+  void afterFirstLayout(BuildContext context) async {}
 
   @override
   void dispose() {
@@ -211,48 +205,6 @@ class _LoginPageState extends State<LoginScreen>
       );
     }
 
-    _loginApple(context) async {
-      try {
-        final AuthorizationResult result = await AppleSignIn.performRequests([
-          AppleIdRequest(requestedScopes: [Scope.email, Scope.fullName])
-        ]);
-
-        switch (result.status) {
-          case AuthorizationStatus.authorized:
-            {
-              final fullName = result.credential.fullName.givenName +
-                  " " +
-                  result.credential.fullName.familyName;
-              _playAnimation();
-              Provider.of<UserModel>(context, listen: false).loginApple(
-                email: result.credential.email,
-                fullName: fullName,
-                success: (user) {
-                  _stopAnimation();
-                  _welcomeMessage(user, context);
-                },
-                fail: (message) {
-                  _stopAnimation();
-                  _failMessage(message, context);
-                },
-              );
-            }
-
-            break;
-
-          case AuthorizationStatus.error:
-            print("Sign in failed: ${result.error.localizedDescription}");
-            break;
-
-          case AuthorizationStatus.cancelled:
-            print('User cancelled');
-            break;
-        }
-      } catch (e) {
-        print(e);
-      }
-    }
-
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
@@ -398,18 +350,18 @@ class _LoginPageState extends State<LoginScreen>
                                   fillColor: Colors.grey.shade50,
                                   padding: const EdgeInsets.all(15.0),
                                 ),
-                                RawMaterialButton(
-                                  onPressed: () => _loginSMS(context),
-                                  child: Icon(
-                                    FontAwesomeIcons.sms,
-                                    color: Colors.lightBlue,
-                                    size: 24.0,
-                                  ),
-                                  shape: CircleBorder(),
-                                  elevation: 0.4,
-                                  fillColor: Colors.grey.shade50,
-                                  padding: const EdgeInsets.all(15.0),
-                                ),
+//                                RawMaterialButton(
+//                                  onPressed: () => _loginSMS(context),
+//                                  child: Icon(
+//                                    FontAwesomeIcons.sms,
+//                                    color: Colors.lightBlue,
+//                                    size: 24.0,
+//                                  ),
+//                                  shape: CircleBorder(),
+//                                  elevation: 0.4,
+//                                  fillColor: Colors.grey.shade50,
+//                                  padding: const EdgeInsets.all(15.0),
+//                                ),
                                 RawMaterialButton(
                                   onPressed: () => _loginGoogle(context),
                                   child: Icon(

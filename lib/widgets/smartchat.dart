@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../common/config.dart' as config;
 import '../models/user.dart';
+import '../screens/chat/chat_screen.dart';
 import '../widgets/fab_circle_menu.dart';
 
 class SmartChat extends StatefulWidget {
@@ -74,7 +76,23 @@ class _SmartChatState extends State<SmartChat> with WidgetsBindingObserver {
               Theme.of(context).primaryColorLight, config.smartChat[i]['app']));
       }
     }
-
+    listWidget.add(
+      IconButton(
+          icon: Icon(
+            FontAwesomeIcons.google,
+            size: 35,
+            color: Theme.of(context).primaryColorLight,
+          ),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => ChatScreen(
+                          user: widget.user,
+                          userEmail: widget.user.email,
+                        )));
+          }),
+    );
     return listWidget;
   }
 
