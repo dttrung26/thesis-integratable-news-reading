@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+
 import '../../../common/config.dart';
 import '../../../common/constants.dart';
 import '../../../common/tools.dart';
+import '../../../models/blog_news.dart';
+import '../../../widgets/heart_button.dart';
 import 'detailed_blog_fullsize_image.dart';
 import 'detailed_blog_half_image.dart';
 import 'detailed_blog_quarter_image.dart';
-import '../../../models/blog_news.dart';
-import '../../../widgets/heart_button.dart';
 
 Widget getDetailPageView(List<BlogNews> blogs) {
   return PageView.builder(

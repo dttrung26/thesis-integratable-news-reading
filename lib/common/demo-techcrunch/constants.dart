@@ -10,12 +10,14 @@ enum kHeartButtonType { cornerType, squareType }
 const kDefaultImage =
     "https://user-images.githubusercontent.com/1459805/58628416-d3056f00-8303-11e9-9212-00179a1f3682.jpg";
 const kLogoImage = 'assets/images/logo.png';
-var addPostAccessibleRoles = ['author', 'administrator'];
+
 const kProfileBackground =
     "https://images.unsplash.com/photo-1536882240095-0379873feb4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1151&q=80";
 
 const welcomeGift =
     'https://media.giphy.com/media/3oz8xSjBmD1ZyELqW4/giphy.gif';
+
+var addPostAccessibleRoles = ['author', 'administrator'];
 
 // const kSplashScreen = "assets/images/splashscreen.flr";
 const kSplashScreen = "assets/images/splashscreen.png";

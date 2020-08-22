@@ -1,3 +1,4 @@
+import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:notification_permissions/notification_permissions.dart';
 import 'package:provider/provider.dart';
@@ -11,6 +12,7 @@ import '../models/app.dart';
 import '../models/user.dart';
 import '../models/wishlist.dart';
 import '../screens/chat/chat_list_by_admin.dart';
+import '../screens/post_management/post_management.dart';
 import '../widgets/smartchat.dart';
 import 'language.dart';
 
@@ -27,9 +29,33 @@ class SettingScreen extends StatefulWidget {
 }
 
 class SettingScreenState extends State<SettingScreen>
-    with TickerProviderStateMixin, WidgetsBindingObserver {
+    with
+        TickerProviderStateMixin,
+        WidgetsBindingObserver,
+        AfterLayoutMixin,
+        AutomaticKeepAliveClientMixin<SettingScreen> {
   final bannerHigh = 200.0;
   bool enabledNotification = true;
+  bool isAbleToPostManagement = false;
+
+  void afterFirstLayout(BuildContext context) {
+    debugPrint('widget.userrr ${widget.user}');
+    if (widget.user != null) checkAddPostRole();
+  }
+
+  void checkAddPostRole() {
+    debugPrint('user.roleee ${widget.user.role}');
+    for (String legitRole in addPostAccessibleRoles) {
+      if (widget.user.role == legitRole) {
+        setState(() {
+          isAbleToPostManagement = true;
+        });
+      }
+    }
+  }
+
+  @override
+  bool get wantKeepAlive => true;
 
   RateMyApp _rateMyApp = RateMyApp(
     minDays: 7,
@@ -201,6 +227,44 @@ class SettingScreenState extends State<SettingScreen>
                           ),
                         ),
                       ),
+                      isAbleToPostManagement
+                          ? Card(
+                              margin: EdgeInsets.only(bottom: 2.0),
+                              elevation: 0,
+                              child: ListTile(
+                                leading: Image.asset(
+                                  'assets/icons/tabs/icon-cart2.png',
+                                  width: 20,
+                                  color: Theme.of(context).accentColor,
+                                ),
+                                title: Text(S.of(context).postManagement,
+                                    style: TextStyle(fontSize: 15)),
+                                trailing: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Icon(Icons.arrow_forward_ios,
+                                          size: 18, color: kGrey600)
+                                    ]),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          PostManagementScreen(),
+                                    ),
+                                  );
+                                },
+                              ),
+                            )
+                          : Container(),
+                      isAbleToPostManagement
+                          ? Divider(
+                              color: Colors.black12,
+                              height: 1.0,
+                              indent: 75,
+                              //endIndent: 20,
+                            )
+                          : Container(),
                       Divider(
                         color: Colors.black12,
                         height: 1.0,

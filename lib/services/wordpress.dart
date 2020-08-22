@@ -1,8 +1,11 @@
 import 'dart:async';
 import 'dart:convert' as convert;
 import "dart:core";
-import 'package:quiver/strings.dart';
+import 'dart:io';
+
 import 'package:http/http.dart' as http;
+import 'package:quiver/strings.dart';
+
 import '../models/blog_news.dart';
 import '../models/category.dart';
 import '../models/comment.dart';
@@ -46,6 +49,55 @@ class WordPress {
         list.add(BlogNews.fromJson(item));
       }
       print(list);
+      return list;
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  Future<String> getJwtAuth(String username, String password) async {
+    try {
+      var endPoint =
+          "$url/wp-json/jwt-auth/v1/token?username=$username&password=$password";
+      var response = await http.post(endPoint);
+      var jsonDecode = convert.jsonDecode(response.body);
+      if (jsonDecode['token'] == null) {
+        throw Exception(jsonDecode['code']);
+      }
+      return jsonDecode['token'];
+    } catch (e) {
+      //This error exception is about your Rest API is not config correctly so that not return the correct JSON format, please double check the document or contact supporters/
+      throw e;
+    }
+  }
+
+  Future<Null> createBlog(File file, {Map<String, dynamic> data}) async {
+    try {
+      int mediaImageId;
+      String jwtToken = await UserModel().getJwtAuthToken();
+      if (jwtToken == null) {
+        print('Error on getting JwtToken');
+      } else {
+        await blogApi.uploadImage(file, jwtToken).then((response) {
+          mediaImageId = response['id'];
+          if (mediaImageId != null) {
+            data['featured_media'] = mediaImageId;
+          }
+        });
+        await blogApi.postAsync("posts", data, token: jwtToken);
+      }
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  Future<List<BlogNews>> getBlogsByUserId(int userId) async {
+    try {
+      var response = await blogApi.getAsync("posts?_embed&author=$userId");
+      List<BlogNews> list = [];
+      for (var item in response) {
+        list.add(BlogNews.fromJson(item));
+      }
       return list;
     } catch (e) {
       throw e;

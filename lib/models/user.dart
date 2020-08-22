@@ -51,6 +51,32 @@ class UserModel with ChangeNotifier {
     }
   }
 
+  void saveJwtAuthToken(String token) async {
+    final LocalStorage storage = new LocalStorage("fstore");
+    try {
+      final ready = await storage.ready;
+      if (ready) {
+        await storage.setItem(kLocalKey['jwtToken'], token);
+      }
+    } catch (err) {
+      print(err);
+    }
+  }
+
+  Future<String> getJwtAuthToken() async {
+    final LocalStorage storage = new LocalStorage('fstore');
+    try {
+      final ready = await storage.ready;
+      if (ready) {
+        return await storage.getItem(kLocalKey['jwtToken']);
+      }
+      return '';
+    } catch (err, trace) {
+      print(err);
+      print(trace);
+      return '';
+    }
+  }
 //  void loginGoogle({Function success, Function fail}) async {
 //    try {
 //      GoogleSignIn _googleSignIn = GoogleSignIn(
@@ -291,7 +317,7 @@ class User {
   String password;
   String picture;
   String cookie;
-
+  String role;
   // from WooCommerce Json
   User.fromJsonFB(Map<String, dynamic> json) {
     try {
@@ -385,6 +411,7 @@ class User {
       email = json['email'];
       password = json['password'];
       picture = json['avatar'];
+      role = json['role'][0];
       loggedIn = true;
     } catch (e) {
       print(e.toString());

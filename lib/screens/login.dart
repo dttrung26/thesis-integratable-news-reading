@@ -10,6 +10,7 @@ import '../generated/l10n.dart';
 import '../models/app.dart';
 import '../models/user.dart';
 import '../screens/login_sms/index.dart';
+import '../services/wordpress.dart';
 import '../widgets/login_animation.dart';
 import '../widgets/webview.dart';
 import 'registration.dart';
@@ -147,7 +148,13 @@ class _LoginPageState extends State<LoginScreen>
         Provider.of<UserModel>(context, listen: false).login(
           username: username.trim(),
           password: password.trim(),
-          success: (user) {
+          success: (user) async {
+            String jwtAuthToken =
+                await WordPress().getJwtAuth(username, password);
+            if (jwtAuthToken != null) {
+              UserModel().saveJwtAuthToken(jwtAuthToken);
+            }
+
             _auth
                 .signInWithEmailAndPassword(email: username, password: password)
                 .catchError((onError) {

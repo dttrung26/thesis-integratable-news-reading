@@ -1,0 +1,83 @@
+{
+  "HorizonLayout": [
+    {
+      "layout": "logo",
+      "showMenu": true
+    },
+    {
+      "layout" : "header_text",
+      "padding": 50.0,
+      "fontSize": 20.0,
+      "isSafeArea": false,
+      "title" : "A Demo From Techcrunch.com"
+    },
+    {
+      "layout" : "largeCardHorizontalListItems",
+      "imageBorder": 40.0,
+      "category": 449557068,
+      "name": "Advertising Tech"
+    },
+    {
+      "layout" : "sliderList",
+      "type" :"imageOnTheRight",
+      "name": "Aerospace",
+      "category": 576702152
+    },
+    {
+      "layout" : "sliderItem",
+      "name": "Apps",
+      "category": 449557102
+    },
+    {
+      "name": "Artificial Intelligence",
+      "image": "",
+      "layout": "card",
+      "category": 424613844
+    },
+    {
+      "name": "Latest tech Asia",
+      "image": "",
+      "layout": "twoColumn",
+      "category": 449557111
+    },
+    {
+      "name": "Augmented Reality",
+      "layout": "fourColumn",
+      "category": 421926862
+    },
+    {
+      "name": "Automotive",
+      "layout": "staggered",
+      "category": 449557096
+    }
+
+
+  ],
+  "Setting": {
+    "MainColor": "#3FC1BE",
+    "ProductListLayout": "list"
+  },
+  "TabBar": [
+    {
+      "layout": "home",
+      "icon": "assets/icons/tabs/icon-home.png"
+    },
+    {
+      "layout": "category",
+      "categoryLayout": "card",
+      "icon": "assets/icons/tabs/icon-category.png"
+    },
+    {
+      "layout": "search",
+      "icon": "assets/icons/tabs/icon-search.png"
+    },
+    {
+      "layout": "wishlist",
+      "icon": "assets/icons/tabs/icon-heartthin.png"
+    },
+    {
+      "layout": "profile",
+      "icon": "assets/icons/tabs/icon-user.png"
+    }
+  ]
+}
