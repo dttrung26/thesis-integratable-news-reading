@@ -213,5 +213,6 @@
   "content": "Content",
   "imageFeature": "Image Feature",
   "submit": "Submit",
-  "createNewPostSuccessfully": "Your post has been successfully created as a draft. Please take a look at your admin site."
+  "createNewPostSuccessfully": "Your post has been successfully created as a draft. Please take a look at your admin site.",
+  "createPost": "Create Post"
 }

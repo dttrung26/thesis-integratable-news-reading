@@ -70,6 +70,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "couponMsgSuccess" : MessageLookupByLibrary.simpleMessage("Congratulations! Coupon code applied successfully"),
     "createAnAccount" : MessageLookupByLibrary.simpleMessage("Create an account"),
     "createNewPostSuccessfully" : MessageLookupByLibrary.simpleMessage("Your post has been successfully created as a draft. Please take a look at your admin site."),
+    "createPost" : MessageLookupByLibrary.simpleMessage("Create Post"),
     "currencies" : MessageLookupByLibrary.simpleMessage("Currencies"),
     "currentPassword" : MessageLookupByLibrary.simpleMessage("Current Password"),
     "darkTheme" : MessageLookupByLibrary.simpleMessage("Dark Theme"),

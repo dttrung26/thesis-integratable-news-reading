@@ -8,24 +8,18 @@ import 'intl/messages_all.dart';
 // Made by Localizely
 // **************************************************************************
 
-// ignore_for_file: non_constant_identifier_names, lines_longer_than_80_chars
-
 class S {
   S();
-  
-  static S current;
   
   static const AppLocalizationDelegate delegate =
     AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
-    final localeName = Intl.canonicalizedLocale(name); 
+    final String name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
+    final String localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
-      S.current = S();
-      
-      return S.current;
+      return S();
     });
   } 
 
@@ -33,7 +27,6 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `See All`
   String get seeAll {
     return Intl.message(
       'See All',
@@ -43,7 +36,6 @@ class S {
     );
   }
 
-  /// `Feature Products`
   String get featureProducts {
     return Intl.message(
       'Feature Products',
@@ -53,7 +45,6 @@ class S {
     );
   }
 
-  /// `Gears Collections`
   String get bagsCollections {
     return Intl.message(
       'Gears Collections',
@@ -63,7 +54,6 @@ class S {
     );
   }
 
-  /// `Woman Collections`
   String get womanCollections {
     return Intl.message(
       'Woman Collections',
@@ -73,7 +63,6 @@ class S {
     );
   }
 
-  /// `Man Collections`
   String get manCollections {
     return Intl.message(
       'Man Collections',
@@ -83,7 +72,6 @@ class S {
     );
   }
 
-  /// `Buy Now`
   String get buyNow {
     return Intl.message(
       'Buy Now',
@@ -93,7 +81,6 @@ class S {
     );
   }
 
-  /// `Products`
   String get products {
     return Intl.message(
       'Products',
@@ -103,7 +90,6 @@ class S {
     );
   }
 
-  /// `Add To Cart`
   String get addToCart {
     return Intl.message(
       'Add To Cart',
@@ -113,7 +99,6 @@ class S {
     );
   }
 
-  /// `Description`
   String get description {
     return Intl.message(
       'Description',
@@ -123,7 +108,6 @@ class S {
     );
   }
 
-  /// `Reviews`
   String get readReviews {
     return Intl.message(
       'Reviews',
@@ -133,7 +117,6 @@ class S {
     );
   }
 
-  /// `Additional Information`
   String get additionalInformation {
     return Intl.message(
       'Additional Information',
@@ -143,7 +126,6 @@ class S {
     );
   }
 
-  /// `No Reviews`
   String get noReviews {
     return Intl.message(
       'No Reviews',
@@ -153,7 +135,6 @@ class S {
     );
   }
 
-  /// `The product is added`
   String get productAdded {
     return Intl.message(
       'The product is added',
@@ -163,7 +144,6 @@ class S {
     );
   }
 
-  /// `You might also like`
   String get youMightAlsoLike {
     return Intl.message(
       'You might also like',
@@ -173,7 +153,6 @@ class S {
     );
   }
 
-  /// `Select the size`
   String get selectTheSize {
     return Intl.message(
       'Select the size',
@@ -183,7 +162,6 @@ class S {
     );
   }
 
-  /// `Select the color`
   String get selectTheColor {
     return Intl.message(
       'Select the color',
@@ -193,7 +171,6 @@ class S {
     );
   }
 
-  /// `Select the quantity`
   String get selectTheQuantity {
     return Intl.message(
       'Select the quantity',
@@ -203,7 +180,6 @@ class S {
     );
   }
 
-  /// `Size`
   String get size {
     return Intl.message(
       'Size',
@@ -213,7 +189,6 @@ class S {
     );
   }
 
-  /// `Color`
   String get color {
     return Intl.message(
       'Color',
@@ -223,7 +198,6 @@ class S {
     );
   }
 
-  /// `My Cart`
   String get myCart {
     return Intl.message(
       'My Cart',
@@ -233,7 +207,6 @@ class S {
     );
   }
 
-  /// `Save to Wishlist`
   String get saveToWishList {
     return Intl.message(
       'Save to Wishlist',
@@ -243,7 +216,6 @@ class S {
     );
   }
 
-  /// `Share`
   String get share {
     return Intl.message(
       'Share',
@@ -253,7 +225,6 @@ class S {
     );
   }
 
-  /// `Cancel`
   String get cancel {
     return Intl.message(
       'Cancel',
@@ -263,7 +234,6 @@ class S {
     );
   }
 
-  /// `Checkout`
   String get checkout {
     return Intl.message(
       'Checkout',
@@ -273,7 +243,6 @@ class S {
     );
   }
 
-  /// `Clear Cart`
   String get clearCart {
     return Intl.message(
       'Clear Cart',
@@ -283,7 +252,6 @@ class S {
     );
   }
 
-  /// `My Wishlist`
   String get myWishList {
     return Intl.message(
       'My Wishlist',
@@ -293,7 +261,6 @@ class S {
     );
   }
 
-  /// `Your bag is empty`
   String get yourBagIsEmpty {
     return Intl.message(
       'Your bag is empty',
@@ -303,7 +270,6 @@ class S {
     );
   }
 
-  /// `Looks like you haven’t added any items to the bag yet. Start shopping to fill it in.`
   String get emptyCartSubtitle {
     return Intl.message(
       'Looks like you haven’t added any items to the bag yet. Start shopping to fill it in.',
@@ -313,7 +279,6 @@ class S {
     );
   }
 
-  /// `Start Shopping`
   String get startShopping {
     return Intl.message(
       'Start Shopping',
@@ -323,7 +288,6 @@ class S {
     );
   }
 
-  /// `No favourites yet.`
   String get noFavoritesYet {
     return Intl.message(
       'No favourites yet.',
@@ -333,7 +297,6 @@ class S {
     );
   }
 
-  /// `Tap any heart next to a product to favotite. We’ll save them for you here!`
   String get emptyWishlistSubtitle {
     return Intl.message(
       'Tap any heart next to a product to favotite. We’ll save them for you here!',
@@ -343,7 +306,6 @@ class S {
     );
   }
 
-  /// `Search for Items`
   String get searchForItems {
     return Intl.message(
       'Search for Items',
@@ -353,7 +315,6 @@ class S {
     );
   }
 
-  /// `Shipping`
   String get shipping {
     return Intl.message(
       'Shipping',
@@ -363,7 +324,6 @@ class S {
     );
   }
 
-  /// `review`
   String get review {
     return Intl.message(
       'review',
@@ -373,7 +333,6 @@ class S {
     );
   }
 
-  /// `Payment`
   String get payment {
     return Intl.message(
       'Payment',
@@ -383,7 +342,6 @@ class S {
     );
   }
 
-  /// `First Name`
   String get firstName {
     return Intl.message(
       'First Name',
@@ -393,7 +351,6 @@ class S {
     );
   }
 
-  /// `Last Name`
   String get lastName {
     return Intl.message(
       'Last Name',
@@ -403,7 +360,6 @@ class S {
     );
   }
 
-  /// `City`
   String get city {
     return Intl.message(
       'City',
@@ -413,7 +369,6 @@ class S {
     );
   }
 
-  /// `State / Province`
   String get stateProvince {
     return Intl.message(
       'State / Province',
@@ -423,7 +378,6 @@ class S {
     );
   }
 
-  /// `Zip-code`
   String get zipCode {
     return Intl.message(
       'Zip-code',
@@ -433,7 +387,6 @@ class S {
     );
   }
 
-  /// `Country`
   String get country {
     return Intl.message(
       'Country',
@@ -443,7 +396,6 @@ class S {
     );
   }
 
-  /// `Phone number`
   String get phoneNumber {
     return Intl.message(
       'Phone number',
@@ -453,7 +405,6 @@ class S {
     );
   }
 
-  /// `Email`
   String get email {
     return Intl.message(
       'Email',
@@ -463,7 +414,6 @@ class S {
     );
   }
 
-  /// `Street Name`
   String get streetName {
     return Intl.message(
       'Street Name',
@@ -473,7 +423,6 @@ class S {
     );
   }
 
-  /// `Shipping Method`
   String get shippingMethod {
     return Intl.message(
       'Shipping Method',
@@ -483,7 +432,6 @@ class S {
     );
   }
 
-  /// `Continue to Shipping`
   String get continueToShipping {
     return Intl.message(
       'Continue to Shipping',
@@ -493,7 +441,6 @@ class S {
     );
   }
 
-  /// `Continue to Review`
   String get continueToReview {
     return Intl.message(
       'Continue to Review',
@@ -503,7 +450,6 @@ class S {
     );
   }
 
-  /// `Continue to Payment`
   String get continueToPayment {
     return Intl.message(
       'Continue to Payment',
@@ -513,7 +459,6 @@ class S {
     );
   }
 
-  /// `Go back to address`
   String get goBackToAddress {
     return Intl.message(
       'Go back to address',
@@ -523,7 +468,6 @@ class S {
     );
   }
 
-  /// `Go back to shipping`
   String get goBackToShipping {
     return Intl.message(
       'Go back to shipping',
@@ -533,7 +477,6 @@ class S {
     );
   }
 
-  /// `Go back to review`
   String get goBackToReview {
     return Intl.message(
       'Go back to review',
@@ -543,7 +486,6 @@ class S {
     );
   }
 
-  /// `Address`
   String get address {
     return Intl.message(
       'Address',
@@ -553,7 +495,6 @@ class S {
     );
   }
 
-  /// `Shipping Address`
   String get shippingAddress {
     return Intl.message(
       'Shipping Address',
@@ -563,7 +504,6 @@ class S {
     );
   }
 
-  /// `Order details`
   String get orderDetail {
     return Intl.message(
       'Order details',
@@ -573,7 +513,6 @@ class S {
     );
   }
 
-  /// `Subtotal`
   String get subtotal {
     return Intl.message(
       'Subtotal',
@@ -583,7 +522,6 @@ class S {
     );
   }
 
-  /// `Total`
   String get total {
     return Intl.message(
       'Total',
@@ -593,7 +531,6 @@ class S {
     );
   }
 
-  /// `Payment Methods`
   String get paymentMethods {
     return Intl.message(
       'Payment Methods',
@@ -603,7 +540,6 @@ class S {
     );
   }
 
-  /// `Choose your payment method`
   String get chooseYourPaymentMethod {
     return Intl.message(
       'Choose your payment method',
@@ -613,7 +549,6 @@ class S {
     );
   }
 
-  /// `Place My Order`
   String get placeMyOrder {
     return Intl.message(
       'Place My Order',
@@ -623,7 +558,6 @@ class S {
     );
   }
 
-  /// `It's ordered!`
   String get itsOrdered {
     return Intl.message(
       'It\'s ordered!',
@@ -633,7 +567,6 @@ class S {
     );
   }
 
-  /// `Order No.`
   String get orderNo {
     return Intl.message(
       'Order No.',
@@ -643,7 +576,6 @@ class S {
     );
   }
 
-  /// `Show All My Ordered`
   String get showAllMyOrdered {
     return Intl.message(
       'Show All My Ordered',
@@ -653,7 +585,6 @@ class S {
     );
   }
 
-  /// `Back to Shop`
   String get backToShop {
     return Intl.message(
       'Back to Shop',
@@ -663,7 +594,6 @@ class S {
     );
   }
 
-  /// `The first name field is required`
   String get firstNameIsRequired {
     return Intl.message(
       'The first name field is required',
@@ -673,7 +603,6 @@ class S {
     );
   }
 
-  /// `The last name field is required`
   String get lastNameIsRequired {
     return Intl.message(
       'The last name field is required',
@@ -683,7 +612,6 @@ class S {
     );
   }
 
-  /// `The street name field is required`
   String get streetIsRequired {
     return Intl.message(
       'The street name field is required',
@@ -693,7 +621,6 @@ class S {
     );
   }
 
-  /// `The city field is required`
   String get cityIsRequired {
     return Intl.message(
       'The city field is required',
@@ -703,7 +630,6 @@ class S {
     );
   }
 
-  /// `The state field is required`
   String get stateIsRequired {
     return Intl.message(
       'The state field is required',
@@ -713,7 +639,6 @@ class S {
     );
   }
 
-  /// `The country field is required`
   String get countryIsRequired {
     return Intl.message(
       'The country field is required',
@@ -723,7 +648,6 @@ class S {
     );
   }
 
-  /// `The phone number field is required`
   String get phoneIsRequired {
     return Intl.message(
       'The phone number field is required',
@@ -733,7 +657,6 @@ class S {
     );
   }
 
-  /// `The email field is required`
   String get emailIsRequired {
     return Intl.message(
       'The email field is required',
@@ -743,7 +666,6 @@ class S {
     );
   }
 
-  /// `The zip code field is required`
   String get zipCodeIsRequired {
     return Intl.message(
       'The zip code field is required',
@@ -753,7 +675,6 @@ class S {
     );
   }
 
-  /// `No Orders`
   String get noOrders {
     return Intl.message(
       'No Orders',
@@ -763,7 +684,6 @@ class S {
     );
   }
 
-  /// `Order Date`
   String get orderDate {
     return Intl.message(
       'Order Date',
@@ -773,7 +693,6 @@ class S {
     );
   }
 
-  /// `Status`
   String get status {
     return Intl.message(
       'Status',
@@ -783,7 +702,6 @@ class S {
     );
   }
 
-  /// `Payment Method`
   String get paymentMethod {
     return Intl.message(
       'Payment Method',
@@ -793,7 +711,6 @@ class S {
     );
   }
 
-  /// `Order History`
   String get orderHistory {
     return Intl.message(
       'Order History',
@@ -803,7 +720,6 @@ class S {
     );
   }
 
-  /// `Refund Request`
   String get refundRequest {
     return Intl.message(
       'Refund Request',
@@ -813,7 +729,6 @@ class S {
     );
   }
 
-  /// `History`
   String get recentSearches {
     return Intl.message(
       'History',
@@ -823,7 +738,6 @@ class S {
     );
   }
 
-  /// `Recent`
   String get recents {
     return Intl.message(
       'Recent',
@@ -833,7 +747,6 @@ class S {
     );
   }
 
-  /// `By Price`
   String get byPrice {
     return Intl.message(
       'By Price',
@@ -843,7 +756,6 @@ class S {
     );
   }
 
-  /// `By Category`
   String get byCategory {
     return Intl.message(
       'By Category',
@@ -853,7 +765,6 @@ class S {
     );
   }
 
-  /// `No internet connection`
   String get noInternetConnection {
     return Intl.message(
       'No internet connection',
@@ -863,7 +774,6 @@ class S {
     );
   }
 
-  /// `Settings`
   String get settings {
     return Intl.message(
       'Settings',
@@ -873,7 +783,6 @@ class S {
     );
   }
 
-  /// `General Setting`
   String get generalSetting {
     return Intl.message(
       'General Setting',
@@ -883,7 +792,6 @@ class S {
     );
   }
 
-  /// `Get Notification`
   String get getNotification {
     return Intl.message(
       'Get Notification',
@@ -893,7 +801,6 @@ class S {
     );
   }
 
-  /// `Notify Messages`
   String get listMessages {
     return Intl.message(
       'Notify Messages',
@@ -903,7 +810,6 @@ class S {
     );
   }
 
-  /// `Language`
   String get language {
     return Intl.message(
       'Language',
@@ -913,7 +819,6 @@ class S {
     );
   }
 
-  /// `Dark Theme`
   String get darkTheme {
     return Intl.message(
       'Dark Theme',
@@ -923,7 +828,6 @@ class S {
     );
   }
 
-  /// `Rate the app`
   String get rateTheApp {
     return Intl.message(
       'Rate the app',
@@ -933,7 +837,6 @@ class S {
     );
   }
 
-  /// `Logout`
   String get logout {
     return Intl.message(
       'Logout',
@@ -943,7 +846,6 @@ class S {
     );
   }
 
-  /// `LogIn`
   String get login {
     return Intl.message(
       'LogIn',
@@ -953,7 +855,6 @@ class S {
     );
   }
 
-  /// `items`
   String get items {
     return Intl.message(
       'items',
@@ -963,7 +864,6 @@ class S {
     );
   }
 
-  /// `Cart`
   String get cart {
     return Intl.message(
       'Cart',
@@ -973,7 +873,6 @@ class S {
     );
   }
 
-  /// `Shop`
   String get shop {
     return Intl.message(
       'Shop',
@@ -983,7 +882,6 @@ class S {
     );
   }
 
-  /// `Search`
   String get search {
     return Intl.message(
       'Search',
@@ -993,7 +891,6 @@ class S {
     );
   }
 
-  /// `Blog`
   String get blog {
     return Intl.message(
       'Blog',
@@ -1003,7 +900,6 @@ class S {
     );
   }
 
-  /// `Apply`
   String get apply {
     return Intl.message(
       'Apply',
@@ -1013,7 +909,6 @@ class S {
     );
   }
 
-  /// `Reset`
   String get reset {
     return Intl.message(
       'Reset',
@@ -1023,7 +918,6 @@ class S {
     );
   }
 
-  /// `Sign in with email`
   String get signInWithEmail {
     return Intl.message(
       'Sign in with email',
@@ -1033,7 +927,6 @@ class S {
     );
   }
 
-  /// `Don't have an account?`
   String get dontHaveAccount {
     return Intl.message(
       'Don\'t have an account?',
@@ -1043,7 +936,6 @@ class S {
     );
   }
 
-  /// `Sign up`
   String get signup {
     return Intl.message(
       'Sign up',
@@ -1053,7 +945,6 @@ class S {
     );
   }
 
-  /// `Welcome`
   String get welcome {
     return Intl.message(
       'Welcome',
@@ -1063,7 +954,6 @@ class S {
     );
   }
 
-  /// `Close`
   String get close {
     return Intl.message(
       'Close',
@@ -1073,7 +963,6 @@ class S {
     );
   }
 
-  /// `OR`
   String get or {
     return Intl.message(
       'OR',
@@ -1083,7 +972,6 @@ class S {
     );
   }
 
-  /// `Please input fill in all fields`
   String get pleaseInput {
     return Intl.message(
       'Please input fill in all fields',
@@ -1093,7 +981,6 @@ class S {
     );
   }
 
-  /// `Searching Address`
   String get searchingAddress {
     return Intl.message(
       'Searching Address',
@@ -1103,7 +990,6 @@ class S {
     );
   }
 
-  /// `Out of stock`
   String get outOfStock {
     return Intl.message(
       'Out of stock',
@@ -1113,7 +999,6 @@ class S {
     );
   }
 
-  /// `Unavailable`
   String get unavailable {
     return Intl.message(
       'Unavailable',
@@ -1123,7 +1008,6 @@ class S {
     );
   }
 
-  /// `Category`
   String get category {
     return Intl.message(
       'Category',
@@ -1133,7 +1017,6 @@ class S {
     );
   }
 
-  /// `No Product`
   String get noProduct {
     return Intl.message(
       'No Product',
@@ -1143,7 +1026,6 @@ class S {
     );
   }
 
-  /// `We found {length} blogs`
   String weFoundProducts(Object length) {
     return Intl.message(
       'We found $length blogs',
@@ -1153,7 +1035,6 @@ class S {
     );
   }
 
-  /// `Clear`
   String get clear {
     return Intl.message(
       'Clear',
@@ -1163,7 +1044,6 @@ class S {
     );
   }
 
-  /// `Video`
   String get video {
     return Intl.message(
       'Video',
@@ -1173,7 +1053,6 @@ class S {
     );
   }
 
-  /// `Your Recent View`
   String get recentView {
     return Intl.message(
       'Your Recent View',
@@ -1183,7 +1062,6 @@ class S {
     );
   }
 
-  /// `In stock`
   String get inStock {
     return Intl.message(
       'In stock',
@@ -1193,7 +1071,6 @@ class S {
     );
   }
 
-  /// `Tracking number is`
   String get trackingNumberIs {
     return Intl.message(
       'Tracking number is',
@@ -1203,7 +1080,6 @@ class S {
     );
   }
 
-  /// `Availability`
   String get availability {
     return Intl.message(
       'Availability',
@@ -1213,7 +1089,6 @@ class S {
     );
   }
 
-  /// `Tracking page`
   String get trackingPage {
     return Intl.message(
       'Tracking page',
@@ -1223,7 +1098,6 @@ class S {
     );
   }
 
-  /// `My points`
   String get myPoints {
     return Intl.message(
       'My points',
@@ -1233,7 +1107,6 @@ class S {
     );
   }
 
-  /// `You have $point points`
   String get youHavePoints {
     return Intl.message(
       'You have \$point points',
@@ -1243,7 +1116,6 @@ class S {
     );
   }
 
-  /// `Events`
   String get events {
     return Intl.message(
       'Events',
@@ -1253,7 +1125,6 @@ class S {
     );
   }
 
-  /// `Date`
   String get date {
     return Intl.message(
       'Date',
@@ -1263,7 +1134,6 @@ class S {
     );
   }
 
-  /// `Point`
   String get point {
     return Intl.message(
       'Point',
@@ -1273,7 +1143,6 @@ class S {
     );
   }
 
-  /// `Order notes`
   String get orderNotes {
     return Intl.message(
       'Order notes',
@@ -1283,7 +1152,6 @@ class S {
     );
   }
 
-  /// `Please rating before you send your comment`
   String get ratingFirst {
     return Intl.message(
       'Please rating before you send your comment',
@@ -1293,7 +1161,6 @@ class S {
     );
   }
 
-  /// `Please write your comment`
   String get commentFirst {
     return Intl.message(
       'Please write your comment',
@@ -1303,7 +1170,6 @@ class S {
     );
   }
 
-  /// `Write your comment`
   String get writeComment {
     return Intl.message(
       'Write your comment',
@@ -1313,7 +1179,6 @@ class S {
     );
   }
 
-  /// `Loading...`
   String get loading {
     return Intl.message(
       'Loading...',
@@ -1323,7 +1188,6 @@ class S {
     );
   }
 
-  /// `Your rating`
   String get productRating {
     return Intl.message(
       'Your rating',
@@ -1333,7 +1197,6 @@ class S {
     );
   }
 
-  /// `Layouts`
   String get layout {
     return Intl.message(
       'Layouts',
@@ -1343,7 +1206,6 @@ class S {
     );
   }
 
-  /// `Select Address`
   String get selectAddress {
     return Intl.message(
       'Select Address',
@@ -1353,7 +1215,6 @@ class S {
     );
   }
 
-  /// `Save Address`
   String get saveAddress {
     return Intl.message(
       'Save Address',
@@ -1363,7 +1224,6 @@ class S {
     );
   }
 
-  /// `Please write input in search field`
   String get searchInput {
     return Intl.message(
       'Please write input in search field',
@@ -1373,7 +1233,6 @@ class S {
     );
   }
 
-  /// `Total tax`
   String get totalTax {
     return Intl.message(
       'Total tax',
@@ -1383,7 +1242,6 @@ class S {
     );
   }
 
-  /// `Invalid SMS Verification code`
   String get invalidSMSCode {
     return Intl.message(
       'Invalid SMS Verification code',
@@ -1393,7 +1251,6 @@ class S {
     );
   }
 
-  /// `Get code`
   String get sendSMSCode {
     return Intl.message(
       'Get code',
@@ -1403,7 +1260,6 @@ class S {
     );
   }
 
-  /// `Verify`
   String get verifySMSCode {
     return Intl.message(
       'Verify',
@@ -1413,7 +1269,6 @@ class S {
     );
   }
 
-  /// `Show Gallery`
   String get showGallery {
     return Intl.message(
       'Show Gallery',
@@ -1423,7 +1278,6 @@ class S {
     );
   }
 
-  /// `Discount`
   String get discount {
     return Intl.message(
       'Discount',
@@ -1433,7 +1287,6 @@ class S {
     );
   }
 
-  /// `Username`
   String get username {
     return Intl.message(
       'Username',
@@ -1443,7 +1296,6 @@ class S {
     );
   }
 
-  /// `Password`
   String get password {
     return Intl.message(
       'Password',
@@ -1453,7 +1305,6 @@ class S {
     );
   }
 
-  /// `Enter your email`
   String get enterYourEmail {
     return Intl.message(
       'Enter your email',
@@ -1463,7 +1314,6 @@ class S {
     );
   }
 
-  /// `Enter your password`
   String get enterYourPassword {
     return Intl.message(
       'Enter your password',
@@ -1473,7 +1323,6 @@ class S {
     );
   }
 
-  /// `I want to create an account`
   String get iwantToCreateAccount {
     return Intl.message(
       'I want to create an account',
@@ -1483,7 +1332,6 @@ class S {
     );
   }
 
-  /// `Login to your account`
   String get loginToYourAccount {
     return Intl.message(
       'Login to your account',
@@ -1493,7 +1341,6 @@ class S {
     );
   }
 
-  /// `Create an account`
   String get createAnAccount {
     return Intl.message(
       'Create an account',
@@ -1503,7 +1350,6 @@ class S {
     );
   }
 
-  /// `Coupon code`
   String get couponCode {
     return Intl.message(
       'Coupon code',
@@ -1513,7 +1359,6 @@ class S {
     );
   }
 
-  /// `Remove`
   String get remove {
     return Intl.message(
       'Remove',
@@ -1523,7 +1368,6 @@ class S {
     );
   }
 
-  /// `Congratulations! Coupon code applied successfully`
   String get couponMsgSuccess {
     return Intl.message(
       'Congratulations! Coupon code applied successfully',
@@ -1533,7 +1377,6 @@ class S {
     );
   }
 
-  /// `Your address is exist in your local`
   String get saveAddressSuccess {
     return Intl.message(
       'Your address is exist in your local',
@@ -1543,7 +1386,6 @@ class S {
     );
   }
 
-  /// `Your note`
   String get yourNote {
     return Intl.message(
       'Your note',
@@ -1553,7 +1395,6 @@ class S {
     );
   }
 
-  /// `Write your note`
   String get writeYourNote {
     return Intl.message(
       'Write your note',
@@ -1563,7 +1404,6 @@ class S {
     );
   }
 
-  /// `You've successfully placed the order`
   String get orderSuccessTitle1 {
     return Intl.message(
       'You\'ve successfully placed the order',
@@ -1573,7 +1413,6 @@ class S {
     );
   }
 
-  /// `You can check status of your order by using our delivery status feature. You will receive an order confirmation e-mail with details of your order and a link to track its progress.`
   String get orderSuccessMsg1 {
     return Intl.message(
       'You can check status of your order by using our delivery status feature. You will receive an order confirmation e-mail with details of your order and a link to track its progress.',
@@ -1583,7 +1422,6 @@ class S {
     );
   }
 
-  /// `Your account`
   String get orderSuccessTitle2 {
     return Intl.message(
       'Your account',
@@ -1593,7 +1431,6 @@ class S {
     );
   }
 
-  /// `You can log to your account using e-mail and password defined earlier. On your account you can edit your profile data, check history of transactions, edit subscription to newsletter.`
   String get orderSuccessMsg2 {
     return Intl.message(
       'You can log to your account using e-mail and password defined earlier. On your account you can edit your profile data, check history of transactions, edit subscription to newsletter.',
@@ -1603,7 +1440,6 @@ class S {
     );
   }
 
-  /// `Sign In`
   String get signIn {
     return Intl.message(
       'Sign In',
@@ -1613,7 +1449,6 @@ class S {
     );
   }
 
-  /// `Sign Up`
   String get signUp {
     return Intl.message(
       'Sign Up',
@@ -1623,7 +1458,6 @@ class S {
     );
   }
 
-  /// `Next`
   String get next {
     return Intl.message(
       'Next',
@@ -1633,7 +1467,6 @@ class S {
     );
   }
 
-  /// `Done`
   String get done {
     return Intl.message(
       'Done',
@@ -1643,7 +1476,6 @@ class S {
     );
   }
 
-  /// `Currencies`
   String get currencies {
     return Intl.message(
       'Currencies',
@@ -1653,7 +1485,6 @@ class S {
     );
   }
 
-  /// `Sale {percent} %`
   String sale(Object percent) {
     return Intl.message(
       'Sale $percent %',
@@ -1663,7 +1494,6 @@ class S {
     );
   }
 
-  /// `Update Profile`
   String get updateUserInfor {
     return Intl.message(
       'Update Profile',
@@ -1673,7 +1503,6 @@ class S {
     );
   }
 
-  /// `Update`
   String get update {
     return Intl.message(
       'Update',
@@ -1683,7 +1512,6 @@ class S {
     );
   }
 
-  /// `About Us`
   String get aboutUs {
     return Intl.message(
       'About Us',
@@ -1693,7 +1521,6 @@ class S {
     );
   }
 
-  /// `Display name`
   String get displayName {
     return Intl.message(
       'Display name',
@@ -1703,7 +1530,6 @@ class S {
     );
   }
 
-  /// `Nice name`
   String get niceName {
     return Intl.message(
       'Nice name',
@@ -1713,7 +1539,6 @@ class S {
     );
   }
 
-  /// `English`
   String get english {
     return Intl.message(
       'English',
@@ -1723,7 +1548,6 @@ class S {
     );
   }
 
-  /// `Vietnam`
   String get vietnamese {
     return Intl.message(
       'Vietnam',
@@ -1733,7 +1557,6 @@ class S {
     );
   }
 
-  /// `Arabic`
   String get arabic {
     return Intl.message(
       'Arabic',
@@ -1743,7 +1566,6 @@ class S {
     );
   }
 
-  /// `Spanish`
   String get spanish {
     return Intl.message(
       'Spanish',
@@ -1753,7 +1575,6 @@ class S {
     );
   }
 
-  /// `Chinese`
   String get chinese {
     return Intl.message(
       'Chinese',
@@ -1763,7 +1584,6 @@ class S {
     );
   }
 
-  /// `Japanese`
   String get japanese {
     return Intl.message(
       'Japanese',
@@ -1773,7 +1593,6 @@ class S {
     );
   }
 
-  /// `The Language is updated successfully`
   String get languageSuccess {
     return Intl.message(
       'The Language is updated successfully',
@@ -1783,7 +1602,6 @@ class S {
     );
   }
 
-  /// `Privacy and Term`
   String get agreeWithPrivacy {
     return Intl.message(
       'Privacy and Term',
@@ -1793,7 +1611,6 @@ class S {
     );
   }
 
-  /// `Privacy and Term`
   String get privacyAndTerm {
     return Intl.message(
       'Privacy and Term',
@@ -1803,7 +1620,6 @@ class S {
     );
   }
 
-  /// `I agree with`
   String get iAgree {
     return Intl.message(
       'I agree with',
@@ -1813,7 +1629,6 @@ class S {
     );
   }
 
-  /// `Current Password`
   String get currentPassword {
     return Intl.message(
       'Current Password',
@@ -1823,7 +1638,6 @@ class S {
     );
   }
 
-  /// `New Password`
   String get newPassword {
     return Intl.message(
       'New Password',
@@ -1833,7 +1647,6 @@ class S {
     );
   }
 
-  /// `have been added to your cart`
   String get addToCartSucessfully {
     return Intl.message(
       'have been added to your cart',
@@ -1843,7 +1656,6 @@ class S {
     );
   }
 
-  /// `Pull to Load more`
   String get pullToLoadMore {
     return Intl.message(
       'Pull to Load more',
@@ -1853,7 +1665,6 @@ class S {
     );
   }
 
-  /// `Load Failed!`
   String get loadFail {
     return Intl.message(
       'Load Failed!',
@@ -1863,7 +1674,6 @@ class S {
     );
   }
 
-  /// `Release to load more`
   String get releaseToLoadMore {
     return Intl.message(
       'Release to load more',
@@ -1873,7 +1683,6 @@ class S {
     );
   }
 
-  /// `No more Data`
   String get noData {
     return Intl.message(
       'No more Data',
@@ -1883,7 +1692,6 @@ class S {
     );
   }
 
-  /// `All`
   String get all {
     return Intl.message(
       'All',
@@ -1893,7 +1701,6 @@ class S {
     );
   }
 
-  /// `Filter`
   String get filter {
     return Intl.message(
       'Filter',
@@ -1903,7 +1710,6 @@ class S {
     );
   }
 
-  /// `Tags`
   String get tags {
     return Intl.message(
       'Tags',
@@ -1913,7 +1719,6 @@ class S {
     );
   }
 
-  /// `Categories`
   String get categories {
     return Intl.message(
       'Categories',
@@ -1923,7 +1728,6 @@ class S {
     );
   }
 
-  /// `Attributes`
   String get attributes {
     return Intl.message(
       'Attributes',
@@ -1933,7 +1737,6 @@ class S {
     );
   }
 
-  /// `days ago`
   String get daysAgo {
     return Intl.message(
       'days ago',
@@ -1943,7 +1746,6 @@ class S {
     );
   }
 
-  /// `months ago`
   String get monthsAgo {
     return Intl.message(
       'months ago',
@@ -1953,7 +1755,6 @@ class S {
     );
   }
 
-  /// `years ago`
   String get yearsAgo {
     return Intl.message(
       'years ago',
@@ -1963,7 +1764,6 @@ class S {
     );
   }
 
-  /// `hours ago`
   String get hoursAgo {
     return Intl.message(
       'hours ago',
@@ -1973,7 +1773,6 @@ class S {
     );
   }
 
-  /// `minutes ago`
   String get minutesAgo {
     return Intl.message(
       'minutes ago',
@@ -1983,7 +1782,6 @@ class S {
     );
   }
 
-  /// `seconds ago`
   String get secondsAgo {
     return Intl.message(
       'seconds ago',
@@ -1993,7 +1791,6 @@ class S {
     );
   }
 
-  /// `Home`
   String get home {
     return Intl.message(
       'Home',
@@ -2003,7 +1800,6 @@ class S {
     );
   }
 
-  /// `We Found Blog(s)`
   String get weFoundBlogs {
     return Intl.message(
       'We Found Blog(s)',
@@ -2013,7 +1809,6 @@ class S {
     );
   }
 
-  /// `Start Exploring`
   String get startExploring {
     return Intl.message(
       'Start Exploring',
@@ -2023,7 +1818,6 @@ class S {
     );
   }
 
-  /// `Comment successfully, please wait until your comment is approved`
   String get commentSuccessfully {
     return Intl.message(
       'Comment successfully, please wait until your comment is approved',
@@ -2033,7 +1827,6 @@ class S {
     );
   }
 
-  /// `Please Login To Comment`
   String get loginToComment {
     return Intl.message(
       'Please Login To Comment',
@@ -2043,7 +1836,6 @@ class S {
     );
   }
 
-  /// `Page View`
   String get pageView {
     return Intl.message(
       'Page View',
@@ -2053,7 +1845,6 @@ class S {
     );
   }
 
-  /// `Add New Blog`
   String get addNewBlog {
     return Intl.message(
       'Add New Blog',
@@ -2063,7 +1854,6 @@ class S {
     );
   }
 
-  /// `a moment ago`
   String get momentAgo {
     return Intl.message(
       'a moment ago',
@@ -2073,7 +1863,6 @@ class S {
     );
   }
 
-  /// `Web View`
   String get webView {
     return Intl.message(
       'Web View',
@@ -2083,7 +1872,6 @@ class S {
     );
   }
 
-  /// `Privacy Policy`
   String get privacyPolicy {
     return Intl.message(
       'Privacy Policy',
@@ -2093,7 +1881,6 @@ class S {
     );
   }
 
-  /// `Contact`
   String get contact {
     return Intl.message(
       'Contact',
@@ -2103,7 +1890,6 @@ class S {
     );
   }
 
-  /// `Post Management`
   String get postManagement {
     return Intl.message(
       'Post Management',
@@ -2113,7 +1899,6 @@ class S {
     );
   }
 
-  /// `You have not created any blog yet!`
   String get noPost {
     return Intl.message(
       'You have not created any blog yet!',
@@ -2123,7 +1908,6 @@ class S {
     );
   }
 
-  /// `Add A New Post`
   String get addANewPost {
     return Intl.message(
       'Add A New Post',
@@ -2133,7 +1917,6 @@ class S {
     );
   }
 
-  /// `Title`
   String get title {
     return Intl.message(
       'Title',
@@ -2143,7 +1926,6 @@ class S {
     );
   }
 
-  /// `Content`
   String get content {
     return Intl.message(
       'Content',
@@ -2153,7 +1935,6 @@ class S {
     );
   }
 
-  /// `Image Feature`
   String get imageFeature {
     return Intl.message(
       'Image Feature',
@@ -2163,7 +1944,6 @@ class S {
     );
   }
 
-  /// `Submit`
   String get submit {
     return Intl.message(
       'Submit',
@@ -2173,11 +1953,19 @@ class S {
     );
   }
 
-  /// `Your post has been successfully created as a draft. Please take a look at your admin site.`
   String get createNewPostSuccessfully {
     return Intl.message(
       'Your post has been successfully created as a draft. Please take a look at your admin site.',
       name: 'createNewPostSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get createPost {
+    return Intl.message(
+      'Create Post',
+      name: 'createPost',
       desc: '',
       args: [],
     );
@@ -2204,7 +1992,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
 
   bool _isSupported(Locale locale) {
     if (locale != null) {
-      for (var supportedLocale in supportedLocales) {
+      for (Locale supportedLocale in supportedLocales) {
         if (supportedLocale.languageCode == locale.languageCode) {
           return true;
         }

@@ -70,6 +70,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "couponMsgSuccess" : MessageLookupByLibrary.simpleMessage("Congratulations! Coupon code applied successfully"),
     "createAnAccount" : MessageLookupByLibrary.simpleMessage("Create an account"),
     "createNewPostSuccessfully" : MessageLookupByLibrary.simpleMessage("Bài đăng của bạn đã được tạo thành công dưới dạng bản nháp"),
+    "createPost" : MessageLookupByLibrary.simpleMessage("Tạo bài đăng mới"),
     "currencies" : MessageLookupByLibrary.simpleMessage("Currencies"),
     "currentPassword" : MessageLookupByLibrary.simpleMessage("Mật khẩu hiện tại"),
     "darkTheme" : MessageLookupByLibrary.simpleMessage("Giao diện tối"),

@@ -69,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "couponMsgSuccess" : MessageLookupByLibrary.simpleMessage("تهانينا! تم تطبيق رمز القسيمة بنجاح"),
     "createAnAccount" : MessageLookupByLibrary.simpleMessage("انشئ حساب"),
     "createNewPostSuccessfully" : MessageLookupByLibrary.simpleMessage("تم إنشاء رسالتك بنجاح كمسودة. يرجى إلقاء نظرة على موقع المشرف الخاص بك"),
+    "createPost" : MessageLookupByLibrary.simpleMessage("إنشاء وظيفة"),
     "currencies" : MessageLookupByLibrary.simpleMessage("العملات"),
     "currentPassword" : MessageLookupByLibrary.simpleMessage("كلمة المرور الحالية"),
     "darkTheme" : MessageLookupByLibrary.simpleMessage("موضوع الظلام"),

@@ -213,5 +213,6 @@
   "category": "Thể loại",
   "imageFeature": "Hình ảnh",
   "submit": "Đăng bài",
-  "createNewPostSuccessfully": "Bài đăng của bạn đã được tạo thành công dưới dạng bản nháp"
+  "createNewPostSuccessfully": "Bài đăng của bạn đã được tạo thành công dưới dạng bản nháp",
+  "createPost": "Tạo bài đăng mới"
 }

@@ -303,55 +303,24 @@ class SettingScreenState extends State<SettingScreen>
                         indent: 75,
                         //endIndent: 20,
                       ),
-                      Card(
-                        margin: EdgeInsets.only(bottom: 2.0),
-                        elevation: 0,
-                        child: ListTile(
-                          onTap: () {
-                            _rateMyApp
-                                .showRateDialog(context)
-                                .then((v) => setState(() {}));
-                          },
-                          leading: Image.asset(
-                            'assets/icons/profile/icon-star.png',
-                            width: 24,
-                            color: Theme.of(context).accentColor,
-                          ),
-                          title: Text(S.of(context).rateTheApp,
-                              style: TextStyle(fontSize: 16)),
-                          trailing: Icon(Icons.arrow_forward_ios,
-                              size: 18, color: kGrey600),
-                        ),
-                      ),
-                      Divider(
-                        color: Colors.black12,
-                        height: 1.0,
-                        indent: 75,
-                        //endIndent: 20,
-                      ),
 //                      Card(
 //                        margin: EdgeInsets.only(bottom: 2.0),
 //                        elevation: 0,
-//                        child: GestureDetector(
+//                        child: ListTile(
 //                          onTap: () {
-//                            Navigator.push(
-//                                context,
-//                                MaterialPageRoute(
-//                                    builder: (context) => Language()));
+//                            _rateMyApp
+//                                .showRateDialog(context)
+//                                .then((v) => setState(() {}));
 //                          },
-//                          child: ListTile(
-//                            leading: Icon(
-//                              Icons.create,
-//                              color: Theme.of(context).accentColor,
-//                              size: 24,
-//                            ),
-//                            title: Text(S.of(context).createPost),
-//                            trailing: Icon(
-//                              Icons.arrow_forward_ios,
-//                              size: 18,
-//                              color: kGrey600,
-//                            ),
+//                          leading: Image.asset(
+//                            'assets/icons/profile/icon-star.png',
+//                            width: 24,
+//                            color: Theme.of(context).accentColor,
 //                          ),
+//                          title: Text(S.of(context).rateTheApp,
+//                              style: TextStyle(fontSize: 16)),
+//                          trailing: Icon(Icons.arrow_forward_ios,
+//                              size: 18, color: kGrey600),
 //                        ),
 //                      ),
 //                      Divider(
@@ -360,6 +329,37 @@ class SettingScreenState extends State<SettingScreen>
 //                        indent: 75,
 //                        //endIndent: 20,
 //                      ),
+                      Card(
+                        margin: EdgeInsets.only(bottom: 2.0),
+                        elevation: 0,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Language()));
+                          },
+                          child: ListTile(
+                            leading: Icon(
+                              Icons.create,
+                              color: Theme.of(context).accentColor,
+                              size: 24,
+                            ),
+                            title: Text(S.of(context).createPost),
+                            trailing: Icon(
+                              Icons.arrow_forward_ios,
+                              size: 18,
+                              color: kGrey600,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Divider(
+                        color: Colors.black12,
+                        height: 1.0,
+                        indent: 75,
+                        //endIndent: 20,
+                      ),
                       Card(
                         margin: EdgeInsets.only(bottom: 2.0),
                         elevation: 0,
