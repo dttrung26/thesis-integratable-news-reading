@@ -1,5 +1,5 @@
 # thesis-integratable-news-reading
-Thesis project in applying Flutter for mobile application combined with WordPress CMS.
+Applying Flutter for mobile application combined with WordPress CMS.
 This project includes:
 - State management: Provider
 - Authentication: Email/password, Facebook, Google login
